@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Finance Manager</h1>
+
+        <!-- Add Expense Section -->
+        <section>
+            <h2>Add Expense</h2>
+            <form id="expense-form">
+                <label>
+                    <span>Category</span>
+                    <input type="text" name="category" required placeholder="e.g. Rent, Groceries">
+                </label>
+                
+                <label>
+                    <span>Amount</span>
+                    <input type="number" step="0.01" name="amount" required placeholder="0.00">
+                </label>
+                
+                <label>
+                    <span>Date</span>
+                    <input type="date" name="date" required value="{{ today }}">
+                </label>
+                
+                <button type="submit">Submit Expense</button>
+            </form>
+            <div id="expense-result"></div>
+        </section>
+
+        <!-- Add Investment Section -->
+        <section>
+            <h2>Add Investment</h2>
+            <form id="investment-form">
+                <label>
+                    <span>Stock Symbol</span>
+                    <input type="text" name="stock" required placeholder="e.g. AAPL, MSFT">
+                </label>
+                
+                <div class="grid-2">
+                    <label>
+                        <span>Buy Price</span>
+                        <input type="number" step="0.01" name="buy_price" required placeholder="0.00">
+                    </label>
+                    
+                    <label>
+                        <span>Sell Price</span>
+                        <input type="number" step="0.01" name="sell_price" required placeholder="0.00">
+                    </label>
+                </div>
+                
+                <label>
+                    <span>Quantity</span>
+                    <input type="number" name="quantity" required placeholder="0">
+                </label>
+                
+                <label>
+                    <span>Date</span>
+                    <input type="date" name="date" required value="{{ today }}">
+                </label>
+                
+                <label>
+                    <span>Tax Paid</span>
+                    <input type="number" step="0.01" name="tax_paid" required placeholder="0.00">
+                </label>
+                
+                <button type="submit">Submit Investment</button>
+            </form>
+            <div id="investment-result"></div>
+        </section>
+
+        <!-- Investment Summary Section -->
+        <section>
+            <h2>Investment Summary</h2>
+            <button id="load-summary">Load Summary</button>
+            <pre id="summary">No investment data available</pre>
+        </section>
+
+        <!-- Database Explorer Section -->
+        <section>
+            <h2>Database Explorer</h2>
+            <div class="tabs">
+                <div class="tab active" data-tab="expenses">Expenses</div>
+                <div class="tab" data-tab="investments">Investments</div>
+            </div>
+            
+            <div class="tab-content active" id="expenses-tab">
+                <div class="button-group">
+                    <button onclick="window.location.href='/dump_expenses'">View Expenses</button>
+                    <button class="btn-danger" onclick="clearData('expenses')">Clear Expenses</button>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="investments-tab">
+                <div class="button-group">
+                    <button onclick="window.location.href='/dump_investments'">View Investments</button>
+                    <button class="btn-danger" onclick="clearData('investments')">Clear Investments</button>
+                </div>
+            </div>
+            
+            <pre id="dump"></pre>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

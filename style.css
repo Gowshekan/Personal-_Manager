@@ -1,0 +1,147 @@
+:root {
+    --primary: #7c3aed;
+    --primary-light: #9f7aea;
+    --secondary: #6d28d9;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #3b82f6;
+    --light: #1e293b;
+    --dark: #0f172a;
+    --gray: #64748b;
+    --white: #f8fafc;
+    --neon: #00f3ff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    color: var(--white);
+}
+
+h1 {
+    text-align: center;
+    color: var(--white);
+    margin: 20px 0 40px;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+section {
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+h2 {
+    color: var(--primary-light);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+form label span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gray);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+button {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger), #b91c1c);
+}
+
+#expense-result,
+#investment-result,
+#summary,
+#dump {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 8px;
+    white-space: pre-wrap;
+}
+
+.tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    background: rgba(124, 58, 237, 0.2);
+}
+
+.tab.active {
+    background: var(--primary);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
