@@ -48,7 +48,7 @@ A modern web application for managing personal finances, tracking expenses, and 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/finance-manager.git
+https://github.com/Gowshekan/Personal-_Manager.git
 cd finance-manager
 
 # Install dependencies
