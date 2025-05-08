@@ -22,6 +22,15 @@ A modern web application for managing personal finances, tracking expenses, and 
   - Data export/import
   - One-click data clearing
 
+## 📁 Directory Structure:
+  finance_manager/
+├── app.py
+├── templates/
+│   └── index.html
+└── static/
+    ├── style.css
+    └── script.js
+
 ## 🛠️ Technology Stack
 
 - 🐍 **Python** (Backend)
